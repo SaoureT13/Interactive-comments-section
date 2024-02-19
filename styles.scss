@@ -1,0 +1,300 @@
+// ## Colors
+
+// ### Primary
+
+$Moderate_blue: hsl(238, 40%, 52%);
+$Soft_Red: hsl(358, 79%, 66%);
+$Light_grayish_blue: hsl(239, 57%, 85%);
+$Pale_red: hsl(357, 100%, 86%);
+
+// ### Neutral
+
+$Dark_blue: hsl(212, 24%, 26%);
+$Grayish_Blue: hsl(211, 10%, 45%);
+$Light_gray: hsl(223, 19%, 93%);
+$Very_light_gray: hsl(228, 33%, 97%);
+$White: hsl(0, 0%, 100%);
+
+* {
+  box-sizing: border-box;
+  font-family: Rubik;
+  margin: 0;
+  padding: 0;
+}
+
+.btn {
+  background-color: $Moderate_blue;
+  color: $White;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  padding: 0.4em 0.6em;
+  cursor: pointer;
+}
+
+.action {
+  position: relative;
+  font-weight: 500;
+  padding-left: 25px;
+  border: none;
+  background-color: transparent;
+  width: 70px;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 5px;
+    transform: translateY(5px);
+    vertical-align: middle;
+  }
+}
+
+.textarea {
+  grid-area: textarea;
+  padding: 10px 25px;
+  border-color: $Very_light_gray;
+  border-radius: 5px;
+  color: $Grayish_Blue;
+  resize: none;
+  transition: 0.3s;
+  // width: 100%;
+
+  &:focus {
+    outline: none;
+    border-color: $Moderate_blue;
+    caret-color: $Moderate_blue;
+  }
+
+  &::placeholder {
+    color: $Grayish_Blue;
+  }
+}
+
+body {
+  min-height: 100vh;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  background-color: $Light_gray;
+}
+
+.main {
+  width: 80%;
+  max-width: 57em;
+  margin: 0 auto;
+  padding-top: 2em;
+}
+
+.replies__contain {
+  position: relative;
+  padding-left: 4em;
+  margin-bottom: 1em;
+
+  .comment__card {
+    margin-bottom: 0.5em;
+  }
+}
+
+.replies__contain::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 2px;
+  height: 100%;
+  background-color: $Very_light_gray;
+  left: 2em;
+}
+
+.comment__card {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "card__user_info card__user_info card__user_info"
+    "card__comment card__comment card__comment"
+    "card__score card__score reply";
+  row-gap: 0.5em;
+  background-color: $White;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 1em;
+}
+
+.card__user_info {
+  grid-area: card__user_info;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  .userimage {
+    display: block;
+    width: 30px;
+    height: 30px;
+  }
+
+  .you {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $Moderate_blue;
+    height: 15px;
+    width: 25px;
+    color: $White;
+    font-weight: bold;
+    font-size: 0.7em;
+  }
+
+  .username {
+    color: $Dark_blue;
+    font-weight: 700;
+  }
+
+  .createdAt {
+    color: $Grayish_Blue;
+  }
+}
+
+.card__comment {
+  grid-area: card__comment;
+  color: $Grayish_Blue;
+
+  .replyingTo {
+    color: $Moderate_blue;
+    font-weight: 500;
+  }
+
+  .content {
+    display: inline;
+  }
+}
+
+.card__score {
+  grid-area: card__score;
+  grid-column: 1 / 2;
+  gap: 1em;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: $Light_gray;
+  height: 30px;
+  border-radius: 5px;
+
+  p {
+    color: $Moderate_blue;
+    font-weight: 500;
+  }
+
+  .btn_plus,
+  .btn_minus {
+    cursor: pointer;
+  }
+}
+
+.box_btn {
+  grid-area: reply;
+  display: flex;
+  justify-self: end;
+  gap: 1em;
+
+  .reply,
+  .edit {
+    color: $Moderate_blue;
+  }
+
+  .reply::before {
+    background: url("./images/icon-reply.svg") center center no-repeat;
+  }
+
+  .delete {
+    color: $Soft_Red;
+
+    &::before {
+      background: url("./images/icon-delete.svg") center center no-repeat;
+    }
+  }
+
+  .edit::before {
+    background: url("./images/icon-edit.svg") center center no-repeat;
+  }
+}
+
+.add_comment {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "textarea textarea textarea"
+    "textarea textarea textarea"
+    "user .  send";
+  gap: 0.5em;
+  background-color: $White;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 1em;
+
+  .user {
+    grid-area: user;
+  }
+  
+  .btn_send {
+    grid-area: send;
+    cursor: pointer;
+  }
+  
+  .btn_send {
+    justify-self: flex-end;
+  }
+}
+
+
+
+.update_container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1em;
+
+  .update {
+    align-self: end;
+  }
+}
+
+@media only screen and (min-width: 725px) {
+  .comment__card {
+    grid-template-columns: 40px auto 70px;
+    grid-template-areas:
+      "card__score card__user_info reply"
+      "card__score card__comment card__comment"
+      ". card__comment card__comment";
+    row-gap: 0.5em;
+  }
+
+  .card__score {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 30px;
+    gap: 0.5em;
+    padding: 10px;
+    margin-right: 1em;
+  }
+
+  .card__comment {
+    grid-row: 2/3;
+    // grid-column: 2/5;
+  }
+
+  .reply {
+    justify-self: flex-end;
+  }
+
+  .add_comment {
+    grid-template-columns: 40px auto 70px;
+    grid-template-areas:
+      "user textarea send"
+      ". textarea ."
+      ". .  .";
+  }
+}

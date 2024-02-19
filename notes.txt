@@ -1,0 +1,1 @@
+Pour les reponses, on créer une div.replies, dans laquelle ont met les reponses. Pour reconnaitre  quel div est la div des reponses de l'autres, on lui attribura un id(genre replies-'id du commentaire'). Maintenant on mettra un margin-left et on lui mettra la ligne pour dire genre ce sont des reponses.

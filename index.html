@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:regular,500,700" rel="stylesheet" />
+  <title>Frontend Mentor | Interactive comments section</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" type="module" defer></script>
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="main">
+    <section class="comment_section"></section>
+
+    <section class="input_comment">
+      <div class="add_comment"> 
+
+        <img src="./images/avatars/image-juliusomo.png" alt="" width="30" height="30" class="user">
+        <textarea class="textarea" name="content" placeholder="Add a comment..." required rows="3"></textarea>
+        <button class="btn btn_send">SEND</button>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- Pull dynamic content from the data.json file -->
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">SAOURE Kouamé Teddy</a>.
+  </div>
+</body>
+<!-- const numLastId = countId(data.comments);
+    const comment = {
+      id: numLastId + 1,
+      content: userComment.value,
+      createdAt: formatDateTime(new Date()),
+      score: 0,
+      user: {
+        image: {
+          png: data.currentUser.image.png,
+          webp: data.currentUser.image.webp,
+        },
+        username: data.currentUser.username,
+      },
+      replies: [],
+    };
+
+    data.comments.push(comment);
+
+    console.log(data);
+
+    comment_section.append(InialiseComment(comment)); -->
+
+</html>
